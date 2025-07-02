@@ -42,7 +42,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, bus-refresh
+        include: busrefresh , busshutdown
 
 authorization-server:
   url: http://localhost:9000
