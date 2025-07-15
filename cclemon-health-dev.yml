@@ -1,6 +1,6 @@
 spring:
   redis:
-    host: localhost
+    host: redis
     port: 6379
     database: 0             # Redis DB index，預設是 0
     timeout: 5000ms         # 連線 timeout 時間
@@ -19,17 +19,34 @@ spring:
     username: root
     password: P@ssw0rd
     driverClassName: com.mysql.cj.jdbc.Driver
+  kafka:
+    bootstrap-servers: kafka:9092,kafka:9092,kafka:9092
+
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.boot.autoconfigure: DEBUG
 
 server:
-  port: 8888
+  port: 8080
   tomcat:
     max-connections: 10000
     accept-count: 10000
     threads:
       max: 10000
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 
+            - refresh
+            - health
 
 authorization-server:
-  url: http://cclemon-auth-dev:9000
-
+  url: http://cclemon-auth-dev:8080
 cclemon-ui:
-  url: http://cclemon-ui-dev
+  url: http://cclemon-ui-dev:5173
