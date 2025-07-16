@@ -1,6 +1,6 @@
 spring:
   redis:
-    host: redis
+    host: redisXX
     port: 6379
     database: 0             # Redis DB index，預設是 0
     timeout: 5000ms         # 連線 timeout 時間
