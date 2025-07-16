@@ -28,6 +28,7 @@ logging:
     root: INFO
     org.springframework.web: INFO
     org.springframework.security: INFO
+    org.springframework.boot.autoconfigure: INFO
 
 server:
   port: 8080
